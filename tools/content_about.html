@@ -1,0 +1,31 @@
+            <p class="lede">I run computational chemistry for drug programs and build the agent tooling that makes it fast.</p>
+
+            <p>At Atombeat I started the agentic research group. I made our structure-preparation, docking, MD and FEP stack callable by agents, so a setup that used to take three to five days of hands-on work now finishes overnight, and I lead a client lead-optimization program for a radioconjugate against a transmembrane GPCR, where FEP has held to a 0.85 kcal/mol mean absolute error against experiment across about fifty peptides. Partners get ranked design packages with structural rationale on a standing cadence, not raw scores.</p>
+
+            <p>My PhD at Yale, in <a href="https://batistalab.com/" rel="noopener">Victor Batista's</a> lab, was allostery-aware drug discovery plus the LoRA fine-tuning strategy behind an ensemble of expert LLMs for synthesis prediction (<em>Nature</em>, 2026). Before that, at UC Irvine, I co-developed the implicit-membrane MM/PBSA model and wrote the GPU module for the Poisson&ndash;Boltzmann solver; both shipped in AmberTools and still turn up in other groups' papers. I would rather build something fifty labs use than publish something fifty people read.</p>
+
+            <h2>What I work with</h2>
+            <ul class="line-list toolbox">
+              <li><span class="line-main"><strong>Physics-based</strong> FEP+ / RBFE, MM-PBSA and MM-GBSA, molecular dynamics and enhanced sampling (OpenMM, GROMACS, AMBER, Desmond), docking (Glide, AutoDock Vina, GNINA), Schr&ouml;dinger Suite, DFT</span></li>
+              <li><span class="line-main"><strong>ML &amp; generative</strong> RFdiffusion, ProteinMPNN, ESM, AlphaFold 2/3 and ColabFold, LoRA / PEFT post-training, active-learning design loops, PyTorch, RDKit</span></li>
+              <li><span class="line-main"><strong>Agentic</strong> Claude Agent SDK, MCP servers and typed tool APIs around scientific software, autonomous design&ndash;score&ndash;triage loops with human adjudication, Claude Code</span></li>
+              <li><span class="line-main"><strong>Modalities</strong> peptides and macrocycles, radioconjugates and other bioconjugates, small molecules, de novo protein binders</span></li>
+              <li><span class="line-main"><strong>Infrastructure</strong> Python, Linux, CUDA and Fortran, Slurm and GPU clusters, Docker, Git</span></li>
+            </ul>
+
+            <details class="disclosure">
+              <summary>The longer story</summary>
+              <div class="disclosure-body">
+                <p>I got hooked by a protein that falls apart when nothing is holding it.</p>
+
+                <p>As an undergraduate at UC Irvine I wrote a proposal to simulate p53, the tumor suppressor mutated in more human cancers than any other protein. It won a small UROP grant, which paid for the work, and I built all fourteen models and ran every simulation myself. The answer was blunt. With DNA bound, the dimer held together. Without it, the two halves rotated apart by roughly 90 degrees. Same protein, same physics; the only variable was what it had hold of. I presented that poster at an ACS national meeting, and I have been chasing versions of the same question ever since.</p>
+
+                <p>Proteins move, and most of the software we design drugs with quietly assumes they don't. Closing that gap has been the through-line of everything after. In Ray Luo's lab I worked on binding free energies inside cell membranes, where the standard model treated the whole greasy interior as one uniform material; letting the dielectric change with depth pulled our agreement with measured affinities from an R of 0.59 to 0.91. I also wrote the matrix module that made the underlying Poisson&ndash;Boltzmann solve fast enough on GPUs to be worth running. Both shipped in AmberTools, and running across them years later in other groups' papers is still my favorite part of this job.</p>
+
+                <p>At Yale I came at the same problem from several directions. We found a compound that holds the SARS-CoV-2 spike closed from an allosteric pocket instead of competing at the fast-mutating surface every antibody goes for. I mapped how the CRISPR-Cas9 HNH domain switches on, checked against a collaborator's NMR, and found a tyrosine that has to pass through one specific intermediate to get from off to on. For TYK2 I finally tried the thing I had been circling for years: build electron density from simulation alone, with no experimental structure of the complex anywhere in the input, then refine a model into it. It reproduced the crystal structures, and it recovered ordered waters and a second inhibitor conformation the real data had averaged together. Done reliably, that tells you how a molecule binds before anyone synthesizes it.</p>
+
+                <p>The machine learning grew out of the same frustration. AlphaFold and most generative design tools hand you one frame of a protein and let you design against it, which is fine right up until selectivity depends on a shape the snapshot never shows. I built a billion-scale screening platform that turned up three new scaffolds against GSK3&beta;, spent a summer at Boehringer Ingelheim teaching models to predict catalyst selectivity, and co-authored the <em>Nature</em> work on an ensemble of specialized LLMs that turns the reaction literature into protocols that actually run.</p>
+
+                <p>What I want hasn't changed much since the p53 poster: design molecules against the range of shapes a protein actually visits, keep it anchored to experimental data, and put the tools in the hands of people who will aim them at patients' problems rather than mine.</p>
+              </div>
+            </details>

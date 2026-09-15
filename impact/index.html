@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impact | Tianyin (Tim) Qiu, PhD</title>
+<meta name="description" content="What shipped, what it changed, and the numbers behind it.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Impact | Tianyin (Tim) Qiu, PhD">
+<meta property="og:description" content="What shipped, what it changed, and the numbers behind it.">
+<meta property="og:url" content="https://timqiu1998.github.io/impact/">
+<meta property="og:image" content="https://timqiu1998.github.io/img/headshot.jpg">
+<link rel="canonical" href="https://timqiu1998.github.io/impact/">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="reading-progress" aria-hidden="true"></div>
+    <header class="header">
+        <h1 class="site-title"><a href="/">Tianyin (Tim) Qiu, PhD</a></h1>
+        <nav class="navigation" aria-label="Site">
+            <a href="/about/" class="nav-link">About</a>
+            <a href="/impact/" class="nav-link" aria-current="page">Impact</a>
+            <a href="/experience/" class="nav-link">Experience</a>
+            <a href="/publications/" class="nav-link">Publications</a>
+            <a href="/recognition/" class="nav-link">Recognition</a>
+            <a href="/assets/Tim_Qiu_CV.pdf" class="nav-link">CV</a>
+        </nav>
+    </header>
+    <div class="container">
+        <article class="content impact">
+            <h1>Impact</h1>
+            <hr>
+            <p class="lede">What shipped, who uses it, and what changed. Numbers are against experiment unless noted.</p>
+
+            <div class="stats">
+              <div class="stat"><div class="num">&lt;12 h</div><div class="lbl">Structure prep and FEP map setup, unattended overnight; was 3&ndash;5 days hands-on</div></div>
+              <div class="stat"><div class="num">0.85</div><div class="lbl">kcal/mol FEP mean absolute error vs. experiment, ~50-peptide series</div></div>
+              <div class="stat"><div class="num">~10%</div><div class="lbl">Experimental hit rate, cyclic-peptide active-learning pilots</div></div>
+              <div class="stat"><div class="num">100+</div><div class="lbl">De novo binder candidates for an IBD target; several in experimental validation</div></div>
+            </div>
+
+            <h2>In production</h2>
+
+            <h3>Agent-callable computational chemistry (Atombeat, 2026&ndash;)</h3>
+            <p>I built the orchestration layer that wraps our structure preparation, docking, MD, FEP and analysis tools as typed, agent-callable services over MCP and custom tool APIs, on the Claude Agent SDK. Agents resolve protonation and tautomer states, build and equilibrate systems, construct perturbation maps and submit jobs, and hand back a package for scientist review. It is the default substrate for our discovery programs, and it took the setup phase of a DMTA cycle from three to five days of a scientist's attention to a single overnight run.</p>
+
+            <h3>Client lead optimization, radioconjugate against a transmembrane GPCR (2025&ndash;)</h3>
+            <p>I lead and project-manage the program end to end: FEP-driven optimization of peptide potency and tumor uptake, residue-by-residue SAR, and direct technical communication with the partner. Across about fifty peptides the FEP predictions have held to a 0.85 kcal/mol mean absolute error against experiment, which is on par with good small-molecule benchmarks on a modality where FEP usually does worse. Several validated candidates have moved to tumor-uptake follow-up. The scientific strategy behind this collaboration is what won Atombeat its first U.S. commercial contract.</p>
+
+            <h3>Cyclic-peptide design platform (Atombeat)</h3>
+            <p>An active-learning loop for orally accessible cyclic peptides that pulls in non-natural amino acids for permeability and stability, and optimizes predicted affinity across several objectives at once. Pilot campaigns returned experimental hit rates of about ten percent of synthesized designs.</p>
+
+            <h3>De novo binder pipeline (Atombeat)</h3>
+            <p>A parallelized RFdiffusion and ProteinMPNN pipeline that produced more than a hundred structurally diverse binder candidates for an inflammatory bowel disease target; multiple designs are in experimental validation.</p>
+
+            <h2>Adopted by others</h2>
+
+            <h3>Implicit-membrane MM/PBSA and GPU Poisson&ndash;Boltzmann (UC Irvine, 2019)</h3>
+            <p>The depth-dependent dielectric membrane model raised the correlation between predicted and measured binding affinities for membrane targets from R = 0.59 to 0.91; the GPU matrix module gave the solver about a 65% efficiency gain. Both were released in AmberTools 2019. The membrane model was carried into gmx_MMPBSA and has since been used by independent groups on a cannabinoid GPCR and a bacterial efflux pump, and cited by drug-discovery companies and the National Cancer Institute.</p>
+
+            <h3>Catalyst-selectivity models for API synthesis (Boehringer Ingelheim, 2024)</h3>
+            <p>A fully automatic pipeline that predicts selectivity for API-forming reactions across three metal catalysts and two ligand families from DFT-derived descriptors, with a classifier that flags ligands giving perfect regioselectivity at about 90% precision. It replaced an estimated three to four weeks of experimental ligand screening per route, and I handed it to the senior synthetic chemists to run on their own programs.</p>
+
+            <h3>Expert-LLM ensemble for synthesis prediction (Yale, <em>Nature</em> 2026)</h3>
+            <p>I proposed the LoRA post-training strategy, and co-implemented it, that specialized an ensemble of 2,489 domain-expert LLMs to turn the reaction literature into executable synthesis protocols.</p>
+
+            <h3>Billion-scale virtual screening (Yale)</h3>
+            <p>An in-house, ML-accelerated screening platform from SMILES to hit-enriched candidates. Against GSK3&beta; it surfaced three hits with novel scaffolds; those results were adopted into a proposal that won a Yale Ventures Blavatnik award.</p>
+
+            <h2>Working with partner programs</h2>
+            <p>What a partner receives, on a standing cadence:</p>
+            <ul>
+              <li>Ranked design packages with structural rationale and per-residue SAR, not raw scores.</li>
+              <li>FEP maps with edges and poses flagged for human adjudication, so the chemists know where to look.</li>
+              <li>Target assessments covering druggability, binding-site tractability, and the prior-art and patent landscape.</li>
+              <li>Candidates carried through to experimental follow-up, with the computational data delivered alongside.</li>
+            </ul>
+
+            <hr>
+            <p class="lede">Discussing a program or a role? <a class="mailto" href="#" data-u="timqiu1998" data-d="gmail.com">timqiu1998 (at) gmail (dot) com</a></p>
+        </article>
+    </div>
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://github.com/timqiu1998" title="GitHub" aria-label="GitHub" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.05.78 2.12v3.15c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a>
+            <a href="https://www.linkedin.com/in/tianyin-qiu-9b863b152" title="LinkedIn" aria-label="LinkedIn" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+            <a href="https://scholar.google.com/citations?user=ViLQhdYAAAAJ" title="Google Scholar" aria-label="Google Scholar" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm0 14.1L5 13.3v3.2c0 1.9 3.1 3.5 7 3.5s7-1.6 7-3.5v-3.2l-7 3.8z"/></svg></a>
+            <a href="https://orcid.org/0000-0002-3490-8469" title="ORCID" aria-label="ORCID" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM7.37 5.4a1.03 1.03 0 1 1 0 2.06 1.03 1.03 0 0 1 0-2.06zm-.8 3.2h1.6v9.2h-1.6V8.6zm3.5 0h4.3c4.1 0 5.9 2.93 5.9 4.6 0 2.36-1.87 4.6-5.87 4.6h-4.33V8.6zm1.6 1.45v6.3h2.5c3.6 0 4.43-2.7 4.43-3.15 0-1.73-1.1-3.15-4.5-3.15h-2.43z"/></svg></a>
+            <a href="/assets/Tim_Qiu_CV.pdf" title="CV (PDF)" aria-label="CV (PDF)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l6 6v14H6V2zm7 1.5V9h5.5L13 3.5zM8 12h8v1.5H8V12zm0 3h8v1.5H8V15zm0 3h5v1.5H8V18z"/></svg></a>
+        </div>
+        <p class="copyright">&copy; <span id="year">2026</span> Tianyin (Tim) Qiu, PhD</p>
+    </footer>
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+    <script src="/js/site.js"></script>
+</body>
+</html>
