@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tianyin (Tim) Qiu</title>
+<meta name="description" content="Tianyin (Tim) Qiu, PhD - Senior AI &amp; CADD Scientist at Atombeat Inc. Agentic AI, machine learning, and physics-based methods for drug discovery.">
+<meta name="author" content="Tianyin (Tim) Qiu">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tianyin (Tim) Qiu">
+<meta property="og:description" content="Senior AI &amp; CADD Scientist at Atombeat Inc. Agentic AI, machine learning, and physics-based methods for drug discovery.">
+<meta property="og:url" content="https://timqiu1998.github.io/">
+
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;&#129514;&lt;/text&gt;&lt;/svg&gt;">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Set the stored theme before first paint so there is no flash.
+  try {
+    var t = localStorage.getItem('theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">Tianyin (Tim) Qiu</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+      <a href="#service">Service</a>
+      <a href="#links">Links</a>
+    </div>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <img class="avatar" src="img/headshot.jpg" alt="Tianyin (Tim) Qiu">
+      <div>
+        <h1>Tianyin (Tim) Qiu, PhD</h1>
+        <div class="role">Senior AI &amp; CADD Scientist, Agentic Research</div>
+        <div class="org">Atombeat Inc.</div>
+        <div class="meta">timqiu1998 (at) gmail (dot) com</div>
+
+        <div class="linkrow">
+          <a class="chip" href="assets/Tim_Qiu_CV.pdf">Curriculum Vitae (PDF)</a>
+          <a class="chip" href="https://www.linkedin.com/in/tianyin-qiu-9b863b152" rel="me noopener">LinkedIn</a>
+          <a class="chip" href="https://scholar.google.com/citations?user=ViLQhdYAAAAJ" rel="noopener">Google Scholar</a>
+          <a class="chip" href="https://orcid.org/0000-0002-3490-8469" rel="me noopener">ORCID</a>
+          <a class="chip" href="https://github.com/timqiu1998" rel="me noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+
+      <p>I got hooked by a protein that falls apart when nothing is holding it.</p>
+
+      <p>As an undergraduate at UC Irvine I wrote a proposal to simulate p53, the tumor
+        suppressor mutated in more human cancers than any other protein. It won a small UROP
+        grant, which paid for the work, and I built all fourteen models and ran every simulation
+        myself. The answer was blunt. With DNA bound, the dimer held together. Without it, the two
+        halves rotated apart by roughly 90 degrees. Same protein, same physics; the only variable
+        was what it had hold of. I presented that poster at an ACS national meeting, and I have
+        been chasing versions of the same question ever since.</p>
+
+      <p>Proteins move, and most of the software we design drugs with quietly assumes they don't.
+        Closing that gap has been the through-line of everything after. In Ray Luo's lab I worked
+        on binding free energies inside cell membranes, where the standard model treated the whole
+        greasy interior as one uniform material; letting the dielectric change with depth pulled
+        our agreement with measured affinities from an R of 0.59 to 0.91. I also wrote the matrix
+        module that made the underlying Poisson&ndash;Boltzmann solve fast enough on GPUs to be
+        worth running. Both shipped in AmberTools, and running across them years later in other
+        groups' papers is still my favorite part of this job. I would rather build something fifty
+        labs use than publish something fifty people read.</p>
+
+      <p>At Yale, with <a href="https://batistalab.com/" rel="noopener">Victor Batista</a>, I came
+        at the same problem from several directions. We found a compound that holds the SARS-CoV-2
+        spike closed from an allosteric pocket instead of competing at the fast-mutating surface
+        every antibody goes for. I mapped how the CRISPR-Cas9 HNH domain switches on, checked
+        against a collaborator's NMR, and found a tyrosine that has to pass through one specific
+        intermediate to get from off to on. For TYK2 I finally tried the thing I had been circling
+        for years: build electron density from simulation alone, with no experimental structure of
+        the complex anywhere in the input, then refine a model into it. It reproduced the crystal
+        structures, and it recovered ordered waters and a second inhibitor conformation the real
+        data had averaged together. Done reliably, that tells you how a molecule binds before
+        anyone synthesizes it.</p>
+
+      <p>The machine learning grew out of the same frustration. AlphaFold and most generative
+        design tools hand you one frame of a protein and let you design against it, which is fine
+        right up until selectivity depends on a shape the snapshot never shows. I built a
+        billion-scale screening platform that turned up three new scaffolds against GSK3&beta;,
+        spent a summer at Boehringer Ingelheim teaching models to predict catalyst selectivity,
+        and co-authored the <em>Nature</em> work on an ensemble of specialized LLMs that turns the
+        reaction literature into protocols that actually run.</p>
+
+      <p>Today I am a senior scientist at Atombeat, where I started our agentic research group.
+        Most of my week goes into making the computational stack callable by agents, so structure
+        preparation, docking, MD, and FEP finish overnight instead of eating days of somebody's
+        attention, and then putting it to work on a live radioconjugate program against a
+        transmembrane GPCR. The FEP predictions have held to within 0.85 kcal/mol of experiment
+        across about fifty peptides, which is roughly the accuracy you hope for and seldom get. I
+        review for <em>J. Med. Chem.</em> and <em>JCTC</em>, and I take on students whenever there
+        is room. What I want hasn't changed much since the p53 poster: design molecules against
+        the range of shapes a protein actually visits, keep it anchored to experimental data, and
+        put the tools in the hands of people who will aim them at patients' problems rather than
+        mine.</p>
+
+      <h2 style="margin-top:34px">Research Interests</h2>
+      <div class="tags">
+        <span class="tag">Agentic AI for science</span>
+        <span class="tag">AI-driven drug design (AIDD)</span>
+        <span class="tag">Structure-based drug design</span>
+        <span class="tag">Free energy perturbation</span>
+        <span class="tag">Molecular dynamics</span>
+        <span class="tag">Generative &amp; diffusion models</span>
+        <span class="tag">LLM post-training (LoRA / PEFT)</span>
+        <span class="tag">Peptides &amp; macrocycles</span>
+        <span class="tag">Bioconjugates / RDC</span>
+        <span class="tag">Allostery</span>
+        <span class="tag">Quantum chemistry &amp; DFT</span>
+        <span class="tag">Heterogeneous catalysis</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Senior AI &amp; CADD Scientist, Agentic Research</h3>
+          <span class="when">Oct 2025 &ndash; Present</span>
+        </div>
+        <div class="where">Atombeat Inc. &mdash; Remote</div>
+        <div class="what">Agentic AI platform development and client-facing lead optimization</div>
+        <ul>
+          <li>Established and lead Atombeat's agentic research function, building an in-house orchestration layer on the
+            Claude Agent SDK that exposes internal computational-chemistry tools as agent-callable services through MCP
+            servers and custom tool APIs &mdash; now the default workflow substrate company-wide.</li>
+          <li>Compressed protein&ndash;ligand structure preparation and FEP map setup from three to five days of
+            hands-on work to a single unattended overnight run, with agents resolving protonation and tautomer states,
+            building and equilibrating systems, and submitting jobs for scientist review.</li>
+          <li>Lead and project-manage a client-facing lead-optimization program for an RDC targeting a transmembrane
+            GPCR, reaching an FEP MAE of 0.85 kcal/mol across a ~50-compound linear-peptide series.</li>
+          <li>Designed an end-to-end active-learning platform for orally accessible cyclic peptides with non-natural
+            amino acids, achieving ~10% experimental hit rates in pilot campaigns.</li>
+          <li>Built a parallelized RFdiffusion-centered de novo binder-design pipeline that produced over 100
+            structurally diverse candidates for an inflammatory bowel disease target.</li>
+          <li>Secured the company's first commercial contract by contributing technical strategy and scientific planning
+            for a lead-optimization collaboration with a publicly traded U.S. pharmaceutical partner.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Computational Modelling Intern</h3>
+          <span class="when">Jun 2024 &ndash; Aug 2024</span>
+        </div>
+        <div class="where">Boehringer Ingelheim, Chemical Development &mdash; Ridgefield, CT</div>
+        <div class="what">Machine-learning-driven high-throughput catalyst design</div>
+        <ul>
+          <li>Accelerated rapid synthesis of drug compounds by three to four weeks with a fully automatic training
+            pipeline testing over 10,000 models on 28 DFT-derived descriptors.</li>
+          <li>Automated reaction-outcome prediction across three metals and two ligand families, reaching a test MAE of
+            2.69 for iridium-catalyzed N-allylation.</li>
+          <li>Demonstrated a classification model distinguishing ligands with a 90% success rate at predicting perfect
+            regioselectivity, and handed the pipeline to senior synthetic chemists to run themselves.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Graduate Research Assistant</h3>
+          <span class="when">Dec 2020 &ndash; Oct 2025</span>
+        </div>
+        <div class="where">Yale University, Victor S. Batista Lab &mdash; New Haven, CT</div>
+        <div class="what">Allostery-aware high-throughput drug discovery; mechanistic catalysis with DFT</div>
+        <ul>
+          <li>Conceived and co-implemented a LoRA parameter-efficient fine-tuning strategy specializing an ensemble of
+            2,489 domain-expert LLMs for chemical-synthesis prediction, underpinning a Nature (2026) publication.</li>
+          <li>Discovered a novel inhibitor scaffold that holds the trimer structure of the SARS-CoV-2 spike protein,
+            combining high-throughput screening with molecular dynamics.</li>
+          <li>Detected three novel-scaffold hits for GSK3&beta; from billion-scale, ML-driven virtual screening via an
+            in-house platform converting SMILES strings to hit-enriched candidates.</li>
+          <li>Identified an inhibitive allosteric pathway unique to TYK2 JH2, enabling antiallergic drug designs with
+            reduced side effects.</li>
+          <li>Proposed and validated a Cu&ndash;Pd alloy with nearly 100% Faradaic efficiency for eliminating nitrite
+            waste, rationalizing a synergistic mechanism with DFT.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Undergraduate Research Assistant</h3>
+          <span class="when">Jan 2018 &ndash; Jun 2020</span>
+        </div>
+        <div class="where">University of California, Irvine &mdash; Ray Luo Lab &amp; Sheryl Tsai Lab</div>
+        <div class="what">Implicit-membrane MM-PBSA; docking-guided enzyme engineering</div>
+        <ul>
+          <li>Developed a heterogeneous implicit-membrane MM-PBSA free energy method that improved agreement with
+            experimental binding free energies from a Pearson r of 0.59 to 0.91 for membrane-embedded targets.</li>
+          <li>Improved MM-PBSA throughput by 65% through GPU implementation and algorithm optimization in CUDA and
+            Fortran.</li>
+          <li>Achieved 90% concordance between docking predictions and experiment for actinorhodin polyketide
+            ketoreductase, pinpointing residue mutations critical for stereocontrol.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="rows edu">
+        <div class="row">
+          <div>
+            <div class="label">Ph.D. in Computational Chemistry &mdash; Yale University</div>
+            <div class="sub">Advisor: Victor S. Batista</div>
+          </div>
+          <span class="when">2025</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">M.S. in Chemistry &mdash; Yale University</div>
+            <div class="sub">New Haven, CT</div>
+          </div>
+          <span class="when">2022</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">B.S. in Chemistry &mdash; University of California, Irvine</div>
+            <div class="sub">Concentration in Computational &amp; Theoretical Chemistry</div>
+          </div>
+          <span class="when">2020</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PUBLICATIONS ===================== -->
+  <section id="publications">
+    <div class="wrap">
+      <h2>Publications</h2>
+      <p style="margin-bottom:22px">
+        Full list on
+        <a href="https://scholar.google.com/citations?user=ViLQhdYAAAAJ" rel="noopener">Google Scholar</a> and
+        <a href="https://orcid.org/0000-0002-3490-8469" rel="noopener">ORCID</a>.
+      </p>
+
+      <ol class="pubs">
+        <li>
+          Li, H., Sarkar, S., Lu, W., Loftus, P.O., <span class="me">Qiu, T.</span>, Shee, Y., Cuomo, A.E.,
+          Webster, J.P., <em>et al.</em> Collective intelligence for AI-assisted chemical synthesis.
+          <span class="venue">Nature</span> (2026). <span class="badge">Nature</span>
+        </li>
+        <li>
+          Dan, X., Long, Z., <span class="me">Qiu, T.</span>, Menzel, J.P., Shi, Q., Batista, V.S. Nonadiabatic H-atom
+          scattering channels on Ge(111) elucidated by the hierarchical equations of motion.
+          <span class="venue">The Journal of Chemical Physics</span> (2026).
+        </li>
+        <li>
+          Konieczny, K., <span class="me">Qiu, T.</span>, Menzel, J.P., Maslack, J., Batista, V.S., Bar&aacute;th, E.
+          Hydrogen transfer to internal alkynes using secondary amines on carbon-supported noble metals.
+          <span class="venue">ACS Physical Chemistry Au</span> (2026).
+        </li>
+        <li>
+          Kyro, G.W., <span class="me">Qiu, T.</span>, Batista, V.S. A model-centric review of deep learning for protein
+          design. <span class="venue">arXiv</span> (2025).
+          <a href="https://arxiv.org/abs/2502.19173" rel="noopener">arXiv:2502.19173</a>
+          <span class="badge">Preprint</span>
+        </li>
+        <li>
+          Long, Z., Meng, J., Weddle, L.R., Videla, P.E., Menzel, J.P., Cabral, D.G.A., Liu, J., &hellip;
+          <span class="me">Qiu, T.</span>, <em>et al.</em> The impact of electric fields on processes at electrode
+          interfaces. <span class="venue">Chemical Reviews</span> (2025).
+        </li>
+        <li>
+          Li, K., <span class="me">Qiu, T.</span>, Zhang, B., Ye, Z., Menzel, J.P., Dong, W.J., Pan, Y., Tang, S.,
+          Long, Z., <em>et al.</em> Rational pathways tuning facilitates photoelectrochemical upcycling of nitrite to
+          ammonia using a CuPd nanoalloy on a GaN/Si photocathode.
+          <span class="venue">Environmental Science &amp; Technology</span> (2025).
+        </li>
+        <li>
+          Gisriel, C.J., Malavath, T., <span class="me">Qiu, T.</span>, Menzel, J.P., Batista, V.S., Brudvig, G.W.,
+          Utschig, L.M. Structure of a biohybrid photosystem I&ndash;platinum nanoparticle solar fuel catalyst.
+          <span class="venue">Nature Communications</span> (2024).
+          <a href="https://doi.org/10.1038/s41467-024-53476-y" rel="noopener">doi:10.1038/s41467-024-53476-y</a>
+        </li>
+        <li>
+          Wang, J., Maschietto, F., <span class="me">Qiu, T.</span>, Arantes, P.R., Skeens, E., Palermo, G., Lisi, G.P.,
+          Batista, V.S. Substrate-independent activation pathways of the CRISPR-Cas9 HNH nuclease.
+          <span class="venue">Biophysical Journal</span> (2023).
+          <a href="https://doi.org/10.1016/j.bpj.2023.11.005" rel="noopener">doi:10.1016/j.bpj.2023.11.005</a>
+        </li>
+        <li>
+          Maschietto, F., <span class="me">Qiu, T.</span>, Wang, J., Shi, Y., Allen, B., Lisi, G.P., Lolis, E.,
+          Batista, V.S. Valproate-coenzyme A conjugate blocks opening of receptor binding domains in the spike trimer of
+          SARS-CoV-2 through an allosteric mechanism.
+          <span class="venue">Computational and Structural Biotechnology Journal</span> (2023).
+          <a href="https://doi.org/10.1016/j.csbj.2023.01.014" rel="noopener">doi:10.1016/j.csbj.2023.01.014</a>
+        </li>
+        <li>
+          Zhao, S., Ni, F., <span class="me">Qiu, T.</span>, Wolff, J.T., Tsai, S.-C., Luo, R. Molecular basis for
+          polyketide ketoreductase&ndash;substrate interactions.
+          <span class="venue">International Journal of Molecular Sciences</span> (2020).
+          <a href="https://doi.org/10.3390/ijms21207562" rel="noopener">doi:10.3390/ijms21207562</a>
+        </li>
+        <li>
+          Greene, D.A., Qi, R., Nguyen, R., <span class="me">Qiu, T.</span>, Luo, R. Heterogeneous dielectric implicit
+          membrane model for the calculation of MM-PBSA binding free energies.
+          <span class="venue">Journal of Chemical Information and Modeling</span> (2019).
+          <a href="https://doi.org/10.1021/acs.jcim.9b00363" rel="noopener">doi:10.1021/acs.jcim.9b00363</a>
+        </li>
+        <li>
+          Wei, H., Luo, A., <span class="me">Qiu, T.</span>, Luo, R., Qi, R. Improved Poisson&ndash;Boltzmann methods for
+          high-performance computing.
+          <span class="venue">Journal of Chemical Theory and Computation</span> (2019).
+          <a href="https://doi.org/10.1021/acs.jctc.9b00602" rel="noopener">doi:10.1021/acs.jctc.9b00602</a>
+        </li>
+        <li>
+          <span class="me">Qiu, T.</span>, Luo, R. Computational analysis of the dimer interface of p53 bound to DNA.
+          <span class="venue">ACS National Meeting &amp; Expo, COMP Division</span> (2019).
+          <span class="badge">Poster</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== AWARDS ===================== -->
+  <section id="awards">
+    <div class="wrap">
+      <h2>Funding &amp; Awards</h2>
+      <div class="rows">
+        <div class="row">
+          <div>
+            <div class="label">Yale Ventures Blavatnik Award (FY25)</div>
+            <div class="sub">Preliminary GSK3&beta; virtual-screening results adopted into the winning proposal</div>
+          </div>
+          <span class="when">2025</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">MURI Grant &mdash; Multidisciplinary University Research Initiative</div>
+            <div class="sub">Preliminary Cu&ndash;Pd catalyst-mechanism results used to win and renew the multi-year award</div>
+          </div>
+          <span class="when">2024</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Yale&ndash;Boehringer Ingelheim Thesis Grant</div>
+            <div class="sub">Built the machine-learning catalyst-design collaboration behind the award</div>
+          </div>
+          <span class="when">2024</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Allergan Undergraduate Research Fellowship</div>
+            <div class="sub">Awarded to fewer than ten students per year</div>
+          </div>
+          <span class="when">2019</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Phi Beta Kappa</div>
+            <div class="sub">Top 2% of juniors by academic performance</div>
+          </div>
+          <span class="when">2019</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Summer Undergraduate Research Fellowship (SURP)</div>
+            <div class="sub">Two consecutive years; plus UROP fellowships across three quarters (2018&ndash;19)</div>
+          </div>
+          <span class="when">2018, 2019</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Dean's Honor List</div>
+            <div class="sub">Eight consecutive quarters</div>
+          </div>
+          <span class="when">2016&ndash;2020</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICE ===================== -->
+  <section id="service">
+    <div class="wrap">
+      <h2>Professional Service</h2>
+      <div class="rows">
+        <div class="row">
+          <div>
+            <div class="label">Scientific Reviewer &mdash; Journal of Medicinal Chemistry</div>
+          </div>
+          <span class="when">2024 &ndash; Present</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Scientific Reviewer &mdash; Journal of Chemical Theory and Computation</div>
+          </div>
+          <span class="when">2023 &ndash; Present</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Scientific Reviewer &mdash; The American Journal of Undergraduate Research</div>
+          </div>
+          <span class="when">&mdash;</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Organizer &amp; Presenter &mdash; AI4Science Workshop</div>
+            <div class="sub">Yale Chemistry Department</div>
+          </div>
+          <span class="when">2025 &ndash; Present</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Member &mdash; Biophysical Society, Yale University Chapter</div>
+          </div>
+          <span class="when">2025 &ndash; Present</span>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Member &mdash; American Chemical Society, New Haven Local Section</div>
+          </div>
+          <span class="when">2020 &ndash; Present</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LINKS ===================== -->
+  <section id="links">
+    <div class="wrap">
+      <h2>Links</h2>
+      <div class="linkrow" style="margin-top:0">
+        <a class="chip" href="https://www.linkedin.com/in/tianyin-qiu-9b863b152" rel="me noopener">LinkedIn</a>
+        <a class="chip" href="https://scholar.google.com/citations?user=ViLQhdYAAAAJ" rel="noopener">Google Scholar</a>
+        <a class="chip" href="https://orcid.org/0000-0002-3490-8469" rel="me noopener">ORCID</a>
+        <a class="chip" href="https://github.com/timqiu1998" rel="me noopener">GitHub</a>
+        <a class="chip" href="assets/Tim_Qiu_CV.pdf">CV (PDF)</a>
+      </div>
+      <p style="margin-top:22px">
+        Reach me at <strong>timqiu1998 (at) gmail (dot) com</strong>.<br>
+        Languages: Chinese (native), English (fluent), Japanese (conversational).
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Tianyin (Tim) Qiu</span>
+    <span>Built with plain HTML, CSS, and JavaScript.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
