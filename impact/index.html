@@ -34,42 +34,84 @@
         <article class="content impact">
             <h1>Impact</h1>
             <hr>
-            <p class="lede">What shipped, who uses it, and what changed. Numbers are against experiment unless noted.</p>
+            <p class="lede">What I built, what happened because of it, and who runs it now.</p>
 
-            <div class="stats">
-              <div class="stat"><div class="num">&lt;12 h</div><div class="lbl">Structure prep and FEP map setup, unattended overnight; was 3&ndash;5 days hands-on</div></div>
-              <div class="stat"><div class="num">0.85</div><div class="lbl">kcal/mol FEP mean absolute error vs. experiment, ~50-peptide series</div></div>
-              <div class="stat"><div class="num">~10%</div><div class="lbl">Experimental hit rate, cyclic-peptide active-learning pilots</div></div>
-              <div class="stat"><div class="num">100+</div><div class="lbl">De novo binder candidates for an IBD target; several in experimental validation</div></div>
+            <h2>Star projects</h2>
+            <div class="cards">
+              <article class="card">
+                <div class="eyebrow">Atombeat &middot; 2026&ndash; &middot; peptides, radioconjugates</div>
+                <h3>Agent-run computational chemistry</h3>
+                <p>Structure preparation and FEP map setup ate three to five days of a scientist's attention every design cycle. I built the agent layer on the Claude Agent SDK that exposes our prep, docking, MD, FEP and analysis tools as callable services over MCP; agents resolve protonation and tautomers, build and equilibrate systems, construct the perturbation maps and submit the jobs, then hand back a package. The scientist steers and adjudicates.</p>
+                <p class="outcome">The setup phase now finishes in one unattended overnight run, under 12 hours. It carries the peptide program's computational work day to day.</p>
+              </article>
+
+              <article class="card">
+                <div class="eyebrow">Client program &middot; 2025&ndash; &middot; oncology, radioligand therapy</div>
+                <h3>Radioconjugate lead optimization, end to end</h3>
+                <p>A U.S. pharmaceutical partner needed a peptide radioconjugate against a transmembrane GPCR optimized for potency and tumor uptake, delivered on a schedule. I am the program's sole CADD scientist and its project manager: FEP-driven residue-by-residue SAR, ranked design packages with structural rationale, and the technical conversation with the partner. I presented the technical case and negotiated terms alongside our BD team.</p>
+                <p class="outcome">Became Atombeat's first commercial contract in North America. FEP has held to a 0.85 kcal/mol mean absolute error across about fifty peptides; validated candidates are in tumor-uptake follow-up.</p>
+              </article>
+
+              <article class="card">
+                <div class="eyebrow">UC Irvine &middot; 2019 &middot; GPCRs, small molecules</div>
+                <h3>Membrane-protein binding free energies, shipped in AmberTools</h3>
+                <p>MM/PBSA treated a cell membrane as one uniform slab, so binding predictions for GPCRs were rough guesses, and the Poisson&ndash;Boltzmann solve underneath was too slow to run at scale. I ran the simulations that parameterized a depth-dependent dielectric membrane and wrote the GPU matrix module for the solver.</p>
+                <p class="outcome">Correlation with measured affinities went from R = 0.59 to 0.91; the solver got about 65% faster. Released in AmberTools 2019, carried into gmx_MMPBSA, and since used by other groups on a cannabinoid GPCR and a bacterial efflux pump, and cited by drug-discovery companies and the National Cancer Institute.</p>
+              </article>
+
+              <article class="card">
+                <div class="eyebrow">Boehringer Ingelheim &middot; 2024 &middot; process chemistry</div>
+                <h3>Catalyst selectivity models chemists run themselves</h3>
+                <p>Choosing the catalyst and ligand for an API-forming reaction was trial and error, three to four weeks of experimental screening per route. I built a fully automatic pipeline that predicts selectivity from DFT-derived descriptors across three metal catalysts and two ligand families, with a classifier that flags ligands giving perfect regioselectivity at about 90% precision.</p>
+                <p class="outcome">Routes start from a model-ranked shortlist instead of a screen. I handed the pipeline to the senior synthetic chemists, and they run it on their own programs.</p>
+              </article>
             </div>
 
-            <h2>In production</h2>
+            <details class="disclosure">
+              <summary>More projects</summary>
+              <ul>
+                <li><strong>Expert-LLM ensemble for synthesis prediction</strong> (Yale, <em>Nature</em> 2026). Proposed the LoRA post-training strategy, and co-implemented it, behind 2,489 domain-expert models that turn the reaction literature into executable protocols.</li>
+                <li><strong>Oral cyclic-peptide design platform</strong> (Atombeat). Co-developed the active-learning loop that folds non-natural amino acids in for permeability and stability; pilot campaigns returned about a 10% experimental hit rate.</li>
+                <li><strong>De novo binders for an IBD target</strong> (Atombeat). Built the parallelized RFdiffusion and ProteinMPNN pipeline; 100+ diverse candidates, several in experimental validation.</li>
+                <li><strong>Billion-scale virtual screening</strong> (Yale). ML-accelerated platform from SMILES to hit-enriched candidates; three novel GSK3&beta; scaffolds, adopted into a proposal that won a Yale Ventures Blavatnik award.</li>
+                <li><strong>Locking the SARS-CoV-2 spike shut</strong> (Yale, co-first author). Screening plus MD found a compound that holds the trimer closed from an allosteric pocket rather than the fast-mutating ACE2 face.</li>
+                <li><strong>Structures before synthesis</strong> (Yale, first author, under review). Electron density from simulation alone, refined into TYK2 inhibitor structures that matched the crystals and recovered features the experiment averaged away.</li>
+                <li><strong>CRISPR-Cas9 HNH activation</strong> (Yale). Mapped the switch-on pathway against a collaborator's NMR; three point mutations that could make Cas9 cut more faithfully.</li>
+                <li><strong>Polyketide enzyme engineering</strong> (UC Irvine). Docking that identified the gating residues setting substrate length in a ketoreductase, and a double mutant to swap them.</li>
+              </ul>
+            </details>
 
-            <h3>Interactive automation of the peptide program (Atombeat, 2026&ndash;)</h3>
-            <p>I lead the peptide discovery program and the effort to automate it with a scientist in the loop. I built the agent layer, on the Claude Agent SDK, that wraps our structure preparation, docking, MD, FEP and analysis tools as typed, agent-callable services over MCP and custom tool APIs. Agents resolve protonation and tautomer states, build and equilibrate systems, construct perturbation maps and submit jobs, then hand back a package; the scientist steers, adjudicates the flagged edges and poses, and decides what goes to synthesis. It took the setup phase of a DMTA cycle from three to five days of a scientist's attention to a single overnight run.</p>
+            <h2>Fields I have worked in</h2>
+            <div class="fields">
+              <div class="field"><strong>Oncology</strong><span>Peptide radioconjugates for solid tumors: potency and tumor-uptake optimization</span></div>
+              <div class="field"><strong>Inflammatory bowel disease</strong><span>De novo protein binders, RFdiffusion and ProteinMPNN</span></div>
+              <div class="field"><strong>Autoimmune</strong><span>TYK2 JH2 allosteric inhibitors, MD-derived complex structures</span></div>
+              <div class="field"><strong>Infectious disease</strong><span>SARS-CoV-2 spike, allosteric conformational locking</span></div>
+              <div class="field"><strong>Metabolic &amp; neurodegenerative</strong><span>GSK3&beta;, billion-scale ML-accelerated screening</span></div>
+              <div class="field"><strong>Gene editing</strong><span>CRISPR-Cas9 nuclease activation, simulation against NMR</span></div>
+              <div class="field"><strong>Antibiotics &amp; natural products</strong><span>Polyketide synthase enzyme engineering rules</span></div>
+              <div class="field"><strong>Oral peptides</strong><span>Cyclic-peptide permeability and stability, active learning</span></div>
+              <div class="field"><strong>Pharmaceutical manufacturing</strong><span>Catalyst and ligand selectivity models for API routes</span></div>
+            </div>
 
-            <h3>Client lead optimization, radioconjugate against a transmembrane GPCR (2025&ndash;)</h3>
-            <p>I lead and project-manage the program end to end: FEP-driven optimization of peptide potency and tumor uptake, residue-by-residue SAR, and direct technical communication with the partner. Across about fifty peptides the FEP predictions have held to a 0.85 kcal/mol mean absolute error against experiment, which is on par with good small-molecule benchmarks on a modality where FEP usually does worse. Several validated candidates have moved to tumor-uptake follow-up. I presented the technical case for this collaboration to the partner and negotiated terms alongside our business-development team; it became Atombeat's first commercial contract in North America.</p>
+            <h2>What I bring</h2>
+            <ul class="line-list bring">
+              <li><span class="line-main"><strong>Automate the setup so scientists spend their time on judgment.</strong> Agents do prep, equilibration, map building and submission; people adjudicate the flagged edges and poses. Three to five days became one overnight run.</span></li>
+              <li><span class="line-main"><strong>Make physics-based methods work where they usually don't.</strong> FEP on a peptide series at 0.85 kcal/mol MAE; membrane MM/PBSA from R = 0.59 to 0.91.</span></li>
+              <li><span class="line-main"><strong>Ship tools other people run.</strong> Synthetic chemists at Boehringer run the selectivity pipeline; the membrane model is in AmberTools and gmx_MMPBSA.</span></li>
+              <li><span class="line-main"><strong>Carry a program alone, end to end.</strong> Sole CADD scientist and project manager on a client radioconjugate program, from target assessment to design packages on a standing cadence.</span></li>
+              <li><span class="line-main"><strong>Bring the work in, not just do it.</strong> Presented the technical case and negotiated terms for Atombeat's first North American contract.</span></li>
+              <li><span class="line-main"><strong>Put a new method into production fast.</strong> RFdiffusion binder pipeline, LoRA post-training for an LLM ensemble, agentic orchestration on the Claude Agent SDK, each within months of first use.</span></li>
+            </ul>
 
-            <h3>Cyclic-peptide design platform (Atombeat)</h3>
-            <p>Co-developed with the team: an active-learning loop for orally accessible cyclic peptides that pulls in non-natural amino acids for permeability and stability, and optimizes predicted affinity across several objectives at once. Pilot campaigns returned experimental hit rates of about ten percent of synthesized designs.</p>
-
-            <h3>De novo binder pipeline (Atombeat)</h3>
-            <p>A parallelized RFdiffusion and ProteinMPNN pipeline that produced more than a hundred structurally diverse binder candidates for an inflammatory bowel disease target; multiple designs are in experimental validation.</p>
-
-            <h2>Adopted by others</h2>
-
-            <h3>Implicit-membrane MM/PBSA and GPU Poisson&ndash;Boltzmann (UC Irvine, 2019)</h3>
-            <p>The depth-dependent dielectric membrane model raised the correlation between predicted and measured binding affinities for membrane targets from R = 0.59 to 0.91; the GPU matrix module gave the solver about a 65% efficiency gain. Both were released in AmberTools 2019. The membrane model was carried into gmx_MMPBSA and has since been used by independent groups on a cannabinoid GPCR and a bacterial efflux pump, and cited by drug-discovery companies and the National Cancer Institute.</p>
-
-            <h3>Catalyst-selectivity models for API synthesis (Boehringer Ingelheim, 2024)</h3>
-            <p>A fully automatic pipeline that predicts selectivity for API-forming reactions across three metal catalysts and two ligand families from DFT-derived descriptors, with a classifier that flags ligands giving perfect regioselectivity at about 90% precision. It replaced an estimated three to four weeks of experimental ligand screening per route, and I handed it to the senior synthetic chemists to run on their own programs.</p>
-
-            <h3>Expert-LLM ensemble for synthesis prediction (Yale, <em>Nature</em> 2026)</h3>
-            <p>I proposed the LoRA post-training strategy, and co-implemented it, that specialized an ensemble of 2,489 domain-expert LLMs to turn the reaction literature into executable synthesis protocols.</p>
-
-            <h3>Billion-scale virtual screening (Yale)</h3>
-            <p>An in-house, ML-accelerated screening platform from SMILES to hit-enriched candidates. Against GSK3&beta; it surfaced three hits with novel scaffolds; those results were adopted into a proposal that won a Yale Ventures Blavatnik award.</p>
+            <h2>Adoption record</h2>
+            <ul class="line-list">
+              <li><span class="line-main"><strong>AmberTools 2019</strong> implicit-membrane MM/PBSA and GPU Poisson&ndash;Boltzmann solver; carried into gmx_MMPBSA; used by independent groups and cited by industry and the NCI</span><span class="line-date">2019&ndash;</span></li>
+              <li><span class="line-main"><strong>Boehringer Ingelheim, Chemical Development</strong> catalyst-selectivity pipeline in the hands of senior synthetic chemists</span><span class="line-date">2024&ndash;</span></li>
+              <li><span class="line-main"><strong>Atombeat discovery programs</strong> agent layer running the peptide program's computational work; design packages delivered to a pharmaceutical partner on a standing cadence</span><span class="line-date">2025&ndash;</span></li>
+              <li><span class="line-main"><strong><em>Nature</em> 2026</strong> LoRA post-training strategy behind the 2,489-expert synthesis ensemble</span><span class="line-date">2026</span></li>
+              <li><span class="line-main"><strong>Yale Ventures Blavatnik award</strong> GSK3&beta; screening results adopted into the winning proposal</span><span class="line-date">2025</span></li>
+            </ul>
 
             <h2>Working with partner programs</h2>
             <p>What a partner receives, on a standing cadence:</p>
