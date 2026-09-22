@@ -53,6 +53,11 @@ ul { padding-left: 1.3rem; color: var(--fg-soft); }
 li { margin: .6rem 0; }
 li::marker { color: var(--fg-muted); }
 strong { color: var(--fg); font-weight: 600; }
+code {
+  font-family: var(--font-mono); font-size: .88em; color: var(--fg);
+  padding: .05em .35em; border-radius: 5px;
+  background: var(--surface-hover); border: 1px solid var(--hairline);
+}
 hr { border: 0; height: 1px; background: var(--hairline); margin: var(--space-section) 0; }
 
 /* ------------------------------------------------------------------

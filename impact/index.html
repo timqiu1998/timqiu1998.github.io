@@ -73,9 +73,12 @@
                 <li><strong>Expert-LLM ensemble for synthesis prediction</strong> (Yale, <em>Nature</em> 2026). Proposed the LoRA post-training strategy, and co-implemented it, behind 2,489 domain-expert models that turn the reaction literature into executable protocols.</li>
                 <li><strong>Oral cyclic-peptide design platform</strong> (Atombeat). Co-developed the active-learning loop that folds non-natural amino acids in for permeability and stability; pilot campaigns returned about a 10% experimental hit rate.</li>
                 <li><strong>De novo binders for an IBD target</strong> (Atombeat). Built the parallelized RFdiffusion and ProteinMPNN pipeline; 100+ diverse candidates, several in experimental validation.</li>
+                <li><strong>Agent-built GPCR model</strong> (Atombeat). A high-fidelity protein&ndash;ligand model of the program's target, built and refined by an LLM-orchestrated workflow driving OpenMM across multi-hour automated cycles, read against residue-by-residue SAR.</li>
+                <li><strong>Target assessment with patent-landscape mining</strong> (Atombeat). Druggability and tractability calls on the program's GPCR and an early-stage oncology target, with prior art surfaced by LLM toolkits to cut the client's patent-conflict risk.</li>
                 <li><strong>Billion-scale virtual screening</strong> (Yale). ML-accelerated platform from SMILES to hit-enriched candidates; three novel GSK3&beta; scaffolds, adopted into a proposal that won a Yale Ventures Blavatnik award.</li>
                 <li><strong>Locking the SARS-CoV-2 spike shut</strong> (Yale, co-first author). Screening plus MD found a compound that holds the trimer closed from an allosteric pocket rather than the fast-mutating ACE2 face.</li>
                 <li><strong>Structures before synthesis</strong> (Yale, first author, under review). Electron density from simulation alone, refined into TYK2 inhibitor structures that matched the crystals and recovered features the experiment averaged away.</li>
+                <li><strong>Beyond AlphaFold3</strong> (Yale). Physics-based refinement of a human FIMP&ndash;TMEM protein pair recovered a pair of key interface hydrogen bonds the predicted structure had missed.</li>
                 <li><strong>CRISPR-Cas9 HNH activation</strong> (Yale). Mapped the switch-on pathway against a collaborator's NMR; three point mutations that could make Cas9 cut more faithfully.</li>
                 <li><strong>Polyketide enzyme engineering</strong> (UC Irvine). Docking that identified the gating residues setting substrate length in a ketoreductase, and a double mutant to swap them.</li>
               </ul>
@@ -89,9 +92,11 @@
               <div class="field"><strong>Infectious disease</strong><span>SARS-CoV-2 spike, allosteric conformational locking</span></div>
               <div class="field"><strong>Metabolic &amp; neurodegenerative</strong><span>GSK3&beta;, billion-scale ML-accelerated screening</span></div>
               <div class="field"><strong>Gene editing</strong><span>CRISPR-Cas9 nuclease activation, simulation against NMR</span></div>
+              <div class="field"><strong>Protein&ndash;protein interfaces</strong><span>Physics-based refinement past AlphaFold3 on a human FIMP&ndash;TMEM pair</span></div>
               <div class="field"><strong>Antibiotics &amp; natural products</strong><span>Polyketide synthase enzyme engineering rules</span></div>
               <div class="field"><strong>Oral peptides</strong><span>Cyclic-peptide permeability and stability, active learning</span></div>
               <div class="field"><strong>Pharmaceutical manufacturing</strong><span>Catalyst and ligand selectivity models for API routes</span></div>
+              <div class="field"><strong>Catalysis &amp; clean energy</strong><span>Cu&ndash;Pd nitrite upcycling, hydrogenation mechanisms, photosystem I&ndash;Pt biohybrids (DFT)</span></div>
             </div>
 
             <h2>What I bring</h2>
@@ -101,7 +106,14 @@
               <li><span class="line-main"><strong>Ship tools other people run.</strong> Synthetic chemists at Boehringer run the selectivity pipeline; the membrane model is in AmberTools and gmx_MMPBSA.</span></li>
               <li><span class="line-main"><strong>Carry a program alone, end to end.</strong> Sole CADD scientist and project manager on a client radioconjugate program, from target assessment to design packages on a standing cadence.</span></li>
               <li><span class="line-main"><strong>Bring the work in, not just do it.</strong> Presented the technical case and negotiated terms for Atombeat's first North American contract.</span></li>
+              <li><span class="line-main"><strong>Explain the science to the people who act on it.</strong> Method education for clients and medicinal chemists; analyses and figures presented by senior leadership at Drug Discovery Chemistry and the ACS National Meeting.</span></li>
               <li><span class="line-main"><strong>Put a new method into production fast.</strong> RFdiffusion binder pipeline, LoRA post-training for an LLM ensemble, agentic orchestration on the Claude Agent SDK, each within months of first use.</span></li>
+            </ul>
+
+            <h2>Open source</h2>
+            <ul class="line-list">
+              <li><span class="line-main"><strong><a href="https://github.com/timqiu1998/claude-skills" rel="noopener">claude-skills</a></strong> (MIT) Agent Skills for Claude Code that automate recurring document and analysis work. Published so far: <code>resume-tailor</code>, which turns a master CV into an exactly-two-page resume for one job description, with an approval gate before any claim is strengthened.</span><span class="line-date">2026</span></li>
+              <li><span class="line-main"><strong><a href="https://github.com/timqiu1998/timqiu1998.github.io" rel="noopener">timqiu1998.github.io</a></strong> This site: plain HTML, CSS and JavaScript, no framework, pages generated from content files by a 90-line build script.</span><span class="line-date">2026</span></li>
             </ul>
 
             <h2>Adoption record</h2>
